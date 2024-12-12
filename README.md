@@ -6,7 +6,7 @@ You'll have two scripts at your folder:
 1. install-wireguard.sh  
 To be honest you can delete it at this point, because it's already has been run and has no use but installation  
 2. add-wg-user.sh  
-Use it for creating new users. To run it use:
+It's automaticaly run at install-wireguard.sh. So don't run it twice :) Use it for creating new users. To run it use:
 ```bash
 sudo ./add-wg-user.sh
 ```  
