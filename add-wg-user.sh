@@ -16,7 +16,7 @@ do
     user_path="/etc/wireguard/user$user_count"
 
     # getting server ip address
-    $ip_addr=$(curl ipinfo.io/ip)
+    $ip_addr=$(curl -s ipinfo.io/ip)
 
     # generating and reading keys
     private_key=$(wg genkey)
