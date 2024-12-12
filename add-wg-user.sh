@@ -11,7 +11,7 @@ read -p "How many users to create? " user_number
 for ((i=0; i<user_number; i++))
 do
     # checking user count
-    user_count=$(cat user-count)
+    user_count=$(cat /etc/wireguard/user-count)
     user_folder="user${user_count}"
     user_path="/etc/wireguard/user$user_count"
 
@@ -48,6 +48,7 @@ PublicKey = $public_key
 AllowedIPs = 10.0.0.$user_count/32"
 
     echo "$new_user_peer" >> /etc/wireguard/wg0.conf
+    echo $((user_count + 1)) > /etc/wireguard/user_count
 done
 
 read -p "For new users to be enabled you must restart the service. All users will lose their connetion.
