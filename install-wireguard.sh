@@ -11,14 +11,15 @@ apt update -y
 apt upgrade -y
 apt autoremove -y
 
+# installing dependancies
+apt install wget -y
+apt install curl -y
+apt install ufw -y
+
 # ufw configuration
 ufw allow ssh
 ufw allow 51820
 ufw enable
-
-# installing dependancies
-apt install wget -y
-apt install curl -y
 
 # wireguard installation and configuration
 apt install wireguard -y
