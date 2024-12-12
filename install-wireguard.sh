@@ -41,6 +41,7 @@ PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o
 PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 ListenPort = 51820
 "
+echo "$wg0" > /etc/wireguard/wg0.conf
 
 # vpn user creation
 echo 2 > /etc/wireguard/user-count
