@@ -49,6 +49,7 @@ AllowedIPs = 10.0.0.$user_count/32"
 
     echo "$new_user_peer" >> /etc/wireguard/wg0.conf
 
+    mkdir -p "/home/wireguard-client-configs"
     cp $user_path/wg.conf /home/wireguard-client-configs/user${user_count}.conf
     echo "The new configuration was copied to /home/wireguard-client-configs/user${user_count}.conf"
 
