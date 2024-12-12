@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # root check
 if [ "$(id -u)" -ne 0 ]; then
@@ -19,7 +19,7 @@ apt install ufw -y
 # ufw configuration
 ufw allow ssh
 ufw allow 51820
-ufw enable
+yes y | ufw enable
 
 # wireguard installation and configuration
 apt install wireguard -y
