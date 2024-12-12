@@ -16,7 +16,7 @@ do
     user_path="/etc/wireguard/user$user_count"
 
     # getting server ip address
-    $ip_addr=$(curl -s ipinfo.io/ip)
+    ip_addr=$(curl -s ipinfo.io/ip)
 
     # generating and reading keys
     private_key=$(wg genkey)
@@ -48,7 +48,7 @@ PublicKey = $public_key
 AllowedIPs = 10.0.0.$user_count/32"
 
     echo "$new_user_peer" >> /etc/wireguard/wg0.conf
-    echo $((user_count + 1)) > /etc/wireguard/user_count
+    echo $((user_count + 1)) > /etc/wireguard/user-count
 done
 
 read -p "For new users to be enabled you must restart the service. All users will lose their connetion.
